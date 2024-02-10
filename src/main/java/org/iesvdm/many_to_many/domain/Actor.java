@@ -1,7 +1,10 @@
 package org.iesvdm.many_to_many.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,21 +14,15 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Pelicula {
+public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private long id;
+    private String nombre;
+    private String apellidos;
 
-    private String titulo;
+    @ManyToMany (mappedBy = "actores")
+    private Set<Pelicula> peliculas = new HashSet<>();
 
-    @ManyToMany
-    private Set<Categoria> categorias = new HashSet<>();
-
-    @ManyToMany (mappedBy = "peliculas")
-    private Set<Actor> actores = new HashSet<>();
-
-    @ManyToOne
-    @ToString.Exclude
-    private Idioma idioma;
 }
