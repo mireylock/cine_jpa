@@ -1,4 +1,4 @@
-package org.iesvdm.many_to_many.domain;
+package org.iesvdm.cine_jpa.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,15 +14,14 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Actor {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
+    @Column(name = "id_categoria")
     private long id;
     private String nombre;
-    private String apellidos;
 
-    @ManyToMany (mappedBy = "actores")
+    @ManyToMany (mappedBy = "categorias")
     private Set<Pelicula> peliculas = new HashSet<>();
-
 }

@@ -1,10 +1,7 @@
-package org.iesvdm.many_to_many.domain;
+package org.iesvdm.cine_jpa.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Set;
 

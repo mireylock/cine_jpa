@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.iesvdm</groupId>
-    <artifactId>many_to_many</artifactId>
+    <artifactId>cine_jpa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>many_to_many</name>
-    <description>many_to_many</description>
+    <name>cine_jpa</name>
+    <description>cine_jpa</description>
     <properties>
         <java.version>21</java.version>
     </properties>

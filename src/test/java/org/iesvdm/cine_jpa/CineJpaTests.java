@@ -1,9 +1,10 @@
-package org.iesvdm.many_to_many;
+package org.iesvdm.cine_jpa;
 
-import org.iesvdm.many_to_many.domain.Categoria;
-import org.iesvdm.many_to_many.domain.Pelicula;
-import org.iesvdm.many_to_many.repository.CategoriaRepository;
-import org.iesvdm.many_to_many.repository.PeliculaRepository;
+import org.iesvdm.cine_jpa.domain.Categoria;
+import org.iesvdm.cine_jpa.domain.Idioma;
+import org.iesvdm.cine_jpa.domain.Pelicula;
+import org.iesvdm.cine_jpa.repository.CategoriaRepository;
+import org.iesvdm.cine_jpa.repository.PeliculaRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.HashSet;
 
 @SpringBootTest
-class ManyToManyApplicationTests {
+class CineJpaTests {
 
     @Autowired
     PeliculaRepository peliculaRepository;
@@ -25,7 +26,7 @@ class ManyToManyApplicationTests {
 
     @Test
     void guardarManyToMany() {
-        Pelicula pelicula1 = new Pelicula(0, "Peli1", new HashSet<>());
+        Pelicula pelicula1 = new Pelicula();
         peliculaRepository.save(pelicula1);
 
         Categoria categoria1 = new Categoria(0,"Categoria1", new HashSet<>());
@@ -43,8 +44,6 @@ class ManyToManyApplicationTests {
         peliculaRepository.save(pelicula1);
         categoriaRepository.save(categoria1);
         categoriaRepository.save(categoria2);
-
-
 
     }
 
